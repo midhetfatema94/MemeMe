@@ -41,19 +41,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func cancelClicked(_ sender: UIBarButtonItem) {
         
-        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Click", style: .default, handler: { action in
-            print("clicked")
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to clear all the changes?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {action in
+            
+            self.topTextField.isHidden = false
+            self.topTextField.text = "Top Line"
+            self.topLine.isHidden = true
+            self.bottomTextField.isHidden = false
+            self.bottomTextField.text = "Bottom Line"
+            self.bottomLine.isHidden = true
+            self.memeImage.image = nil
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {action in
+            
+            alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
         
-//        topTextField.isHidden = false
-//        topTextField.text = "Top Line"
-//        topLine.isHidden = true
-//        bottomTextField.isHidden = false
-//        bottomTextField.text = "Bottom Line"
-//        bottomLine.isHidden = true
-//        memeImage.image = nil
     }
     
     override func viewDidLoad() {
