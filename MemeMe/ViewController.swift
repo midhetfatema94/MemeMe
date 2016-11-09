@@ -13,10 +13,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let imagePicker = UIImagePickerController()
     var activeField: UITextField?
     
+    @IBOutlet weak var memeView: UIView!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var topTextField: UITextField!
-    @IBOutlet weak var bottomLine: UILabel!
-    @IBOutlet weak var topLine: UILabel!
     @IBOutlet weak var memeImage: UIImageView!
     @IBAction func cameraClicked(_ sender: UIBarButtonItem) {
         
@@ -33,7 +32,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareImage(_ sender: UIBarButtonItem) {
         
         var sharingItems = [AnyObject]()
-        sharingItems.append(memeImage.image!)
+        
+        let renderer = UIGraphicsImageRenderer(size: memeView.bounds.size)
+        let image = renderer.image { ctx in
+            memeView.drawHierarchy(in: memeView.bounds, afterScreenUpdates: true)
+        }
+        
+        sharingItems.append(image)
         
         let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
@@ -44,12 +49,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let alert = UIAlertController(title: "Alert", message: "Are you sure you want to clear all the changes?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {action in
             
-            self.topTextField.isHidden = false
             self.topTextField.text = "Top Line"
-            self.topLine.isHidden = true
-            self.bottomTextField.isHidden = false
             self.bottomTextField.text = "Bottom Line"
-            self.bottomLine.isHidden = true
             self.memeImage.image = nil
             alert.dismiss(animated: true, completion: nil)
         }))
@@ -71,6 +72,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.tag = 1
         topTextField.delegate = self
         
+        let memeTextAttributes:[String:Any] = [
+            NSStrokeColorAttributeName: UIColor.white,
+            NSForegroundColorAttributeName: UIColor.white,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSStrokeWidthAttributeName: 4.0]
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = memeTextAttributes
+        
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
@@ -78,16 +87,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
-        textField.isHidden = true
-        if textField.tag == 1 && textField.text != "" {
-            bottomLine.text = textField.text
-            bottomLine.isHidden = false
-            activeField = nil
-        }
-        else if textField.tag == 0 && textField.text != "" {
-            topLine.text = textField.text
-            topLine.isHidden = false
-        }
         return true
     }
     
