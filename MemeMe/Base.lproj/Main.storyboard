@@ -22,22 +22,28 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTZ-Ai-moF">
-                                <rect key="frame" x="0.0" y="134" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gDF-mP-e0D">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top Line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKO-N5-P0N">
-                                        <rect key="frame" x="110.5" y="8" width="154" height="48"/>
-                                        <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="87.5" y="60" width="200" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="kXe-nN-xab"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom Line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vZd-hE-IBG">
-                                        <rect key="frame" x="79.5" y="344" width="216" height="48"/>
-                                        <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="87.5" y="559" width="200" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Sy5-GN-tF1"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -45,14 +51,14 @@
                                     <constraint firstItem="vZd-hE-IBG" firstAttribute="centerX" secondItem="sTZ-Ai-moF" secondAttribute="centerX" id="Mkp-hF-5Ax"/>
                                     <constraint firstAttribute="bottom" secondItem="gDF-mP-e0D" secondAttribute="bottom" id="QiK-8Q-Z6a"/>
                                     <constraint firstAttribute="trailing" secondItem="gDF-mP-e0D" secondAttribute="trailing" id="aim-bN-3J7"/>
-                                    <constraint firstAttribute="bottom" secondItem="vZd-hE-IBG" secondAttribute="bottom" constant="8" id="caq-3J-WBB"/>
-                                    <constraint firstItem="RKO-N5-P0N" firstAttribute="top" secondItem="sTZ-Ai-moF" secondAttribute="top" constant="8" id="fLn-Vk-vlj"/>
+                                    <constraint firstAttribute="bottom" secondItem="vZd-hE-IBG" secondAttribute="bottom" constant="60" id="caq-3J-WBB"/>
+                                    <constraint firstItem="RKO-N5-P0N" firstAttribute="top" secondItem="sTZ-Ai-moF" secondAttribute="top" constant="60" id="fLn-Vk-vlj"/>
                                     <constraint firstItem="RKO-N5-P0N" firstAttribute="centerX" secondItem="sTZ-Ai-moF" secondAttribute="centerX" id="iBa-LJ-B8q"/>
                                     <constraint firstItem="gDF-mP-e0D" firstAttribute="leading" secondItem="sTZ-Ai-moF" secondAttribute="leading" id="xov-G9-KRL"/>
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Xo-aV-IeR">
-                                <rect key="frame" x="0.0" y="624" width="375" height="43"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="V2a-YZ-bxZ">
                                         <connections>
@@ -72,10 +78,9 @@
                         <constraints>
                             <constraint firstItem="0z4-f0-NgG" firstAttribute="top" secondItem="8Xo-aV-IeR" secondAttribute="bottom" id="03F-O8-DJu"/>
                             <constraint firstItem="8Xo-aV-IeR" firstAttribute="leading" secondItem="vAL-Sv-4nD" secondAttribute="leading" id="G3T-zw-bhJ"/>
-                            <constraint firstItem="sTZ-Ai-moF" firstAttribute="centerY" secondItem="vAL-Sv-4nD" secondAttribute="centerY" id="gEG-hd-YfB"/>
-                            <constraint firstItem="8Xo-aV-IeR" firstAttribute="top" secondItem="sTZ-Ai-moF" secondAttribute="bottom" constant="90" id="nhV-mh-638"/>
+                            <constraint firstAttribute="bottom" secondItem="sTZ-Ai-moF" secondAttribute="bottom" id="Pes-My-8OP"/>
+                            <constraint firstItem="sTZ-Ai-moF" firstAttribute="top" secondItem="vAL-Sv-4nD" secondAttribute="top" id="gDs-Wp-53y"/>
                             <constraint firstItem="sTZ-Ai-moF" firstAttribute="leading" secondItem="vAL-Sv-4nD" secondAttribute="leading" id="qgp-x1-I8X"/>
-                            <constraint firstItem="sTZ-Ai-moF" firstAttribute="top" secondItem="jP0-wI-nCd" secondAttribute="bottom" constant="70" id="rYg-a5-QCj"/>
                             <constraint firstAttribute="trailing" secondItem="8Xo-aV-IeR" secondAttribute="trailing" id="wMm-MF-yUU"/>
                             <constraint firstAttribute="trailing" secondItem="sTZ-Ai-moF" secondAttribute="trailing" id="zL4-XS-Own"/>
                         </constraints>
@@ -94,6 +99,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bottomTextField" destination="vZd-hE-IBG" id="24O-v5-fcb"/>
+                        <outlet property="cameraButton" destination="V2a-YZ-bxZ" id="M1B-Sn-AV8"/>
                         <outlet property="memeImage" destination="gDF-mP-e0D" id="LyL-16-Uih"/>
                         <outlet property="memeView" destination="sTZ-Ai-moF" id="Uc9-nD-TxZ"/>
                         <outlet property="topTextField" destination="RKO-N5-P0N" id="hSG-FV-8ir"/>

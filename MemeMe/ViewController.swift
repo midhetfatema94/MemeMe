@@ -17,6 +17,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var memeImage: UIImageView!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    
     @IBAction func cameraClicked(_ sender: UIBarButtonItem) {
         
         imagePicker.sourceType = .camera
@@ -33,6 +35,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         var sharingItems = [AnyObject]()
         
+        //Converts UIView into UIImage
         let renderer = UIGraphicsImageRenderer(size: memeView.bounds.size)
         let image = renderer.image { ctx in
             memeView.drawHierarchy(in: memeView.bounds, afterScreenUpdates: true)
@@ -46,6 +49,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func cancelClicked(_ sender: UIBarButtonItem) {
         
+        //Clears all the content if user chooses to restart
         let alert = UIAlertController(title: "Alert", message: "Are you sure you want to clear all the changes?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {action in
             
@@ -72,16 +76,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.tag = 1
         topTextField.delegate = self
         
+        if UIImagePickerController.availableCaptureModes(for: .rear) == nil {
+            cameraButton.isEnabled = false
+        }
+        
+        
         let memeTextAttributes:[String:Any] = [
-            NSStrokeColorAttributeName: UIColor.white,
+            NSStrokeColorAttributeName: UIColor.black,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 56)!,
             NSForegroundColorAttributeName: UIColor.white,
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName: 4.0]
+            NSStrokeWidthAttributeName: -4.0]
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        NotificationCenter.default.removeObserver(self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
