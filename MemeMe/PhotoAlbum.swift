@@ -13,6 +13,8 @@ import Photos
 
 import Photos
 
+//Code reference: Stack Overflow
+
 class CustomPhotoAlbum {
     
     static let albumName = "MemeMe"

@@ -44,6 +44,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var sharingItems = [AnyObject]()
         
         //Converts UIView into UIImage
+        //Code reference: Stack Overflow
         let renderer = UIGraphicsImageRenderer(size: memeView.bounds.size)
         let image = renderer.image { ctx in
             memeView.drawHierarchy(in: memeView.bounds, afterScreenUpdates: true)
@@ -87,6 +88,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.tag = 1
         topTextField.delegate = self
         
+        //Code reference: Stack Overflow
         if UIImagePickerController.availableCaptureModes(for: .rear) == nil {
             cameraButton.isEnabled = false
         }
