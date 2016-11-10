@@ -19,6 +19,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    var fill: UIColor!
+    var font: Font!
+    var stroke: Stroke!
+    
+    @IBAction func customizeFont(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "customise", sender: self)
+    }
     @IBAction func cameraClicked(_ sender: UIBarButtonItem) {
         
         imagePicker.sourceType = .camera
@@ -83,17 +91,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             cameraButton.isEnabled = false
         }
         
+        fill = UIColor.white
+        font = Font(name: "Impact", size: 56)
+        stroke = Stroke(color: UIColor.black, width: 4.0)
+        makeFont()
+        
+    }
+    
+    func makeFont() {
         
         let memeTextAttributes:[String:Any] = [
-            NSStrokeColorAttributeName: UIColor.black,
-            NSFontAttributeName: UIFont(name: "Impact", size: 56)!,
-            NSForegroundColorAttributeName: UIColor.white,
-            NSStrokeWidthAttributeName: -4.0]
+            NSStrokeColorAttributeName: stroke.color,
+            NSFontAttributeName: UIFont(name: font.name, size: CGFloat(font.size))!,
+            NSForegroundColorAttributeName: fill,
+            NSStrokeWidthAttributeName: -(CGFloat(stroke.width))]
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = .center
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.textAlignment = .center
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,6 +126,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
+        activeField = nil
         return true
     }
     
@@ -156,7 +172,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.dismiss(animated: true, completion: nil)
         
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "customise" {
+            
+            let next = segue.destination as! CustomizeFontViewController
+            next.prevVC = self
+        }
+    }
+    
 }
 
 struct Meme {
@@ -166,4 +191,12 @@ struct Meme {
     let originalImage: UIImage
 }
 
+struct Font {
+    var name: String!
+    var size: Double!
+}
 
+struct Stroke {
+    var color: UIColor!
+    var width: Double!
+}

@@ -71,6 +71,12 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="V8W-ya-2FN"/>
+                                    <barButtonItem title="Customize Font" id="b0s-32-qOf">
+                                        <connections>
+                                            <action selector="customizeFont:" destination="BYZ-38-t0r" id="qLu-Yv-l0b"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="X4f-eC-bRg"/>
                                     <barButtonItem title="Album" id="V0X-yg-NUh">
                                         <connections>
                                             <action selector="albumClicked:" destination="BYZ-38-t0r" id="Eq1-5u-dXV"/>
@@ -108,11 +114,158 @@
                         <outlet property="memeImage" destination="gDF-mP-e0D" id="LyL-16-Uih"/>
                         <outlet property="memeView" destination="sTZ-Ai-moF" id="Uc9-nD-TxZ"/>
                         <outlet property="topTextField" destination="RKO-N5-P0N" id="hSG-FV-8ir"/>
+                        <segue destination="JSx-i4-THq" kind="presentation" identifier="customise" id="GPN-C2-Gqz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="84" y="139"/>
+        </scene>
+        <!--Customize Font View Controller-->
+        <scene sceneID="dHp-06-GUu">
+            <objects>
+                <viewController id="JSx-i4-THq" customClass="CustomizeFontViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nKC-l5-eak"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZVV-3S-yDK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ydg-En-pTo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LB1-qm-Q0w">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="d5Y-yK-mG0"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SP9-1c-hzH"/>
+                                    <barButtonItem title="Use Font" id="gPK-wX-k19">
+                                        <connections>
+                                            <action selector="useCustomization:" destination="JSx-i4-THq" id="jMv-b7-3JM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhm-qn-7AI">
+                                <rect key="frame" x="161" y="100" width="53" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hQD-Op-Wgb">
+                                <rect key="frame" x="93.5" y="149.5" width="188.5" height="110"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O8c-QC-gMb">
+                                        <rect key="frame" x="0.0" y="0.0" width="188.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZl-N5-dZI">
+                                                <rect key="frame" x="0.0" y="0.0" width="49.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teZ-Le-pmM">
+                                                <rect key="frame" x="69.5" y="0.0" width="49.5" height="30"/>
+                                                <state key="normal" title="Name"/>
+                                                <connections>
+                                                    <action selector="changeFontNameOrSize:" destination="JSx-i4-THq" eventType="touchUpInside" id="lcQ-cp-Rdr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWr-sT-XbR">
+                                                <rect key="frame" x="139" y="0.0" width="49.5" height="30"/>
+                                                <state key="normal" title="Size"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yo8-I2-aiE">
+                                        <rect key="frame" x="0.0" y="40" width="188.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wU5-wi-nyf">
+                                                <rect key="frame" x="0.0" y="0.0" width="84.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cD5-2A-17b">
+                                                <rect key="frame" x="104.5" y="0.0" width="84" height="30"/>
+                                                <state key="normal" title="Color"/>
+                                                <connections>
+                                                    <action selector="changeFillColor:" destination="JSx-i4-THq" eventType="touchUpInside" id="px4-lo-Njr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FIE-mT-wy2">
+                                        <rect key="frame" x="0.0" y="80" width="188.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stroke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Srr-3a-DHM">
+                                                <rect key="frame" x="0.0" y="0.0" width="49.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKJ-y2-FNH">
+                                                <rect key="frame" x="69.5" y="0.0" width="49.5" height="30"/>
+                                                <state key="normal" title="Color"/>
+                                                <connections>
+                                                    <action selector="changeStrokeColorOrWidth:" destination="JSx-i4-THq" eventType="touchUpInside" id="Vko-2v-6Vj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYn-Ce-agv">
+                                                <rect key="frame" x="139" y="0.0" width="49.5" height="30"/>
+                                                <state key="normal" title="Width"/>
+                                                <connections>
+                                                    <action selector="changeStrokeColorOrWidth:" destination="JSx-i4-THq" eventType="touchUpInside" id="UqE-LL-F6b"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0Q-E4-MO0">
+                                <rect key="frame" x="0.0" y="407" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JSx-i4-THq" id="uG1-iX-z5e"/>
+                                    <outlet property="delegate" destination="JSx-i4-THq" id="FUf-c4-ZqU"/>
+                                </connections>
+                            </pickerView>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REb-Hr-jOV">
+                                <rect key="frame" x="0.0" y="407" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Iwn-33-Byv"/>
+                                    <barButtonItem systemItem="done" id="CVU-tK-JHu">
+                                        <connections>
+                                            <action selector="donePicker:" destination="JSx-i4-THq" id="nl0-jA-Pol"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LB1-qm-Q0w" firstAttribute="leading" secondItem="Ydg-En-pTo" secondAttribute="leading" id="3lF-PG-vLi"/>
+                            <constraint firstItem="w0Q-E4-MO0" firstAttribute="leading" secondItem="Ydg-En-pTo" secondAttribute="leading" id="7GA-TT-VnN"/>
+                            <constraint firstItem="Qhm-qn-7AI" firstAttribute="centerX" secondItem="Ydg-En-pTo" secondAttribute="centerX" id="El3-3v-usn"/>
+                            <constraint firstItem="hQD-Op-Wgb" firstAttribute="top" secondItem="Qhm-qn-7AI" secondAttribute="bottom" constant="32" id="Faj-Ob-NBT"/>
+                            <constraint firstItem="REb-Hr-jOV" firstAttribute="leading" secondItem="Ydg-En-pTo" secondAttribute="leading" id="Gqa-4q-lrY"/>
+                            <constraint firstItem="LB1-qm-Q0w" firstAttribute="top" secondItem="w0Q-E4-MO0" secondAttribute="bottom" id="ML4-Ox-5eX"/>
+                            <constraint firstAttribute="trailing" secondItem="REb-Hr-jOV" secondAttribute="trailing" id="TvN-3b-wSq"/>
+                            <constraint firstAttribute="trailing" secondItem="w0Q-E4-MO0" secondAttribute="trailing" id="Xde-pM-wlA"/>
+                            <constraint firstItem="hQD-Op-Wgb" firstAttribute="centerX" secondItem="Ydg-En-pTo" secondAttribute="centerX" id="glI-q2-Tr6"/>
+                            <constraint firstItem="ZVV-3S-yDK" firstAttribute="top" secondItem="LB1-qm-Q0w" secondAttribute="bottom" id="ia8-ia-jHj"/>
+                            <constraint firstItem="Qhm-qn-7AI" firstAttribute="top" secondItem="nKC-l5-eak" secondAttribute="bottom" constant="80" id="jZQ-JR-GKs"/>
+                            <constraint firstAttribute="trailing" secondItem="LB1-qm-Q0w" secondAttribute="trailing" id="jcK-fv-Spx"/>
+                            <constraint firstItem="REb-Hr-jOV" firstAttribute="top" secondItem="w0Q-E4-MO0" secondAttribute="top" id="wZ8-D5-l6w"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="w0Q-E4-MO0" id="Hof-LB-fyO"/>
+                        <outlet property="pickerToolbar" destination="REb-Hr-jOV" id="nkz-2m-iB2"/>
+                        <outlet property="testLabel" destination="Qhm-qn-7AI" id="7z4-nC-IV9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eas-ti-Odi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="823" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VSJ-jD-REQ">

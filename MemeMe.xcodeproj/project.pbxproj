@@ -16,6 +16,7 @@
 		BB8B11C41DD214C000F5EA73 /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B11C31DD214C000F5EA73 /* MemeMeUITests.swift */; };
 		BBB0EECF1DD46122008D8755 /* PhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0EECE1DD46122008D8755 /* PhotoAlbum.swift */; };
 		BBB0EED31DD46FC9008D8755 /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBB0EED01DD46ECF008D8755 /* Impact.ttf */; };
+		BBB0EED51DD4771F008D8755 /* CustomizeFontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0EED41DD4771F008D8755 /* CustomizeFontViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BB8B11C51DD214C000F5EA73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBB0EECE1DD46122008D8755 /* PhotoAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbum.swift; sourceTree = "<group>"; };
 		BBB0EED01DD46ECF008D8755 /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Impact.ttf; path = ../../../../Downloads/Impact.ttf; sourceTree = "<group>"; };
+		BBB0EED41DD4771F008D8755 /* CustomizeFontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomizeFontViewController.swift; path = ../CustomizeFontViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				BBB0EED21DD46EED008D8755 /* Helpers */,
 				BBB0EED11DD46EDD008D8755 /* Fonts */,
 				BB8B11A31DD214C000F5EA73 /* AppDelegate.swift */,
+				BBB0EED41DD4771F008D8755 /* CustomizeFontViewController.swift */,
 				BB8B11A51DD214C000F5EA73 /* ViewController.swift */,
 				BB8B11A71DD214C000F5EA73 /* Main.storyboard */,
 				BB8B11AA1DD214C000F5EA73 /* Assets.xcassets */,
@@ -288,6 +291,7 @@
 				BB8B11A61DD214C000F5EA73 /* ViewController.swift in Sources */,
 				BBB0EECF1DD46122008D8755 /* PhotoAlbum.swift in Sources */,
 				BB8B11A41DD214C000F5EA73 /* AppDelegate.swift in Sources */,
+				BBB0EED51DD4771F008D8755 /* CustomizeFontViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
