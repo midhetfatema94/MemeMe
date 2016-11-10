@@ -16,6 +16,7 @@
 		BB8B11C41DD214C000F5EA73 /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B11C31DD214C000F5EA73 /* MemeMeUITests.swift */; };
 		BBB0EECF1DD46122008D8755 /* PhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0EECE1DD46122008D8755 /* PhotoAlbum.swift */; };
 		BBB0EED51DD4771F008D8755 /* CustomizeFontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0EED41DD4771F008D8755 /* CustomizeFontViewController.swift */; };
+		BBB0EED71DD4EFFF008D8755 /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBB0EED61DD4DA8C008D8755 /* Impact.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB8B11AE1DD214C000F5EA73 /* LaunchScreen.storyboard in Resources */,
+				BBB0EED71DD4EFFF008D8755 /* Impact.ttf in Resources */,
 				BB8B11AB1DD214C000F5EA73 /* Assets.xcassets in Resources */,
 				BB8B11A91DD214C000F5EA73 /* Main.storyboard in Resources */,
 			);

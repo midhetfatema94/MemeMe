@@ -281,7 +281,7 @@
         <scene sceneID="VSJ-jD-REQ">
             <objects>
                 <navigationController id="T1y-Wo-1R8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kH2-4R-xcr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kH2-4R-xcr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
