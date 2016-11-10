@@ -41,7 +41,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             memeView.drawHierarchy(in: memeView.bounds, afterScreenUpdates: true)
         }
         
-        sharingItems.append(image)
+        let saveMeme = Meme(topLine: topTextField.text!, bottomLine: bottomTextField.text!, memedImage: image, originalImage: memeImage.image!)
+        sharingItems.append(saveMeme.memedImage)
+        
+        CustomPhotoAlbum.sharedInstance.saveImage(image: saveMeme.memedImage)
         
         let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
@@ -153,4 +156,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
 }
+
+struct Meme {
+    let topLine: String
+    let bottomLine: String
+    let memedImage: UIImage
+    let originalImage: UIImage
+}
+
 

@@ -14,6 +14,7 @@
 		BB8B11AE1DD214C000F5EA73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8B11AC1DD214C000F5EA73 /* LaunchScreen.storyboard */; };
 		BB8B11B91DD214C000F5EA73 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B11B81DD214C000F5EA73 /* MemeMeTests.swift */; };
 		BB8B11C41DD214C000F5EA73 /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B11C31DD214C000F5EA73 /* MemeMeUITests.swift */; };
+		BBB0EECF1DD46122008D8755 /* PhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0EECE1DD46122008D8755 /* PhotoAlbum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BB8B11BF1DD214C000F5EA73 /* MemeMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8B11C31DD214C000F5EA73 /* MemeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeUITests.swift; sourceTree = "<group>"; };
 		BB8B11C51DD214C000F5EA73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBB0EECE1DD46122008D8755 /* PhotoAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				BB8B11A31DD214C000F5EA73 /* AppDelegate.swift */,
 				BB8B11A51DD214C000F5EA73 /* ViewController.swift */,
 				BB8B11A71DD214C000F5EA73 /* Main.storyboard */,
+				BBB0EECE1DD46122008D8755 /* PhotoAlbum.swift */,
 				BB8B11AA1DD214C000F5EA73 /* Assets.xcassets */,
 				BB8B11AC1DD214C000F5EA73 /* LaunchScreen.storyboard */,
 				BB8B11AF1DD214C000F5EA73 /* Info.plist */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB8B11A61DD214C000F5EA73 /* ViewController.swift in Sources */,
+				BBB0EECF1DD46122008D8755 /* PhotoAlbum.swift in Sources */,
 				BB8B11A41DD214C000F5EA73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +518,7 @@
 				BB8B11CA1DD214C000F5EA73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB8B11CB1DD214C000F5EA73 /* Build configuration list for PBXNativeTarget "MemeMeTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				BB8B11CD1DD214C000F5EA73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB8B11CE1DD214C000F5EA73 /* Build configuration list for PBXNativeTarget "MemeMeUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				BB8B11D01DD214C000F5EA73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
