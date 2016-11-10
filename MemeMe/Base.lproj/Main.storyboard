@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Impact.ttf">
+            <string>Impact</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Meme Me-->
         <scene sceneID="tne-QT-ifu">
@@ -28,21 +33,21 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top Line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKO-N5-P0N">
-                                        <rect key="frame" x="87.5" y="60" width="200" height="48"/>
+                                        <rect key="frame" x="12.5" y="60" width="350" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="kXe-nN-xab"/>
+                                            <constraint firstAttribute="width" constant="350" id="kXe-nN-xab"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom Line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vZd-hE-IBG">
-                                        <rect key="frame" x="87.5" y="559" width="200" height="48"/>
+                                        <rect key="frame" x="12.5" y="558" width="350" height="49"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="Sy5-GN-tF1"/>
+                                            <constraint firstAttribute="width" constant="350" id="Sy5-GN-tF1"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
@@ -113,7 +118,7 @@
         <scene sceneID="VSJ-jD-REQ">
             <objects>
                 <navigationController id="T1y-Wo-1R8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kH2-4R-xcr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kH2-4R-xcr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

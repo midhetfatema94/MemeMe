@@ -86,11 +86,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let memeTextAttributes:[String:Any] = [
             NSStrokeColorAttributeName: UIColor.black,
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 56)!,
+            NSFontAttributeName: UIFont(name: "Impact", size: 56)!,
             NSForegroundColorAttributeName: UIColor.white,
             NSStrokeWidthAttributeName: -4.0]
         topTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.textAlignment = .center
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.textAlignment = .center
         
     }
     
