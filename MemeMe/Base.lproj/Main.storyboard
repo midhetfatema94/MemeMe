@@ -165,14 +165,18 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teZ-Le-pmM">
                                                 <rect key="frame" x="69.5" y="0.0" width="49.5" height="30"/>
-                                                <state key="normal" title="Name"/>
+                                                <state key="normal" title="Name">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="changeFontNameOrSize:" destination="JSx-i4-THq" eventType="touchUpInside" id="lcQ-cp-Rdr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWr-sT-XbR">
                                                 <rect key="frame" x="139" y="0.0" width="49.5" height="30"/>
-                                                <state key="normal" title="Size"/>
+                                                <state key="normal" title="Size">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -187,7 +191,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cD5-2A-17b">
                                                 <rect key="frame" x="104.5" y="0.0" width="84" height="30"/>
-                                                <state key="normal" title="Color"/>
+                                                <state key="normal" title="Color">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="changeFillColor:" destination="JSx-i4-THq" eventType="touchUpInside" id="px4-lo-Njr"/>
                                                 </connections>
@@ -205,14 +211,18 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKJ-y2-FNH">
                                                 <rect key="frame" x="69.5" y="0.0" width="49.5" height="30"/>
-                                                <state key="normal" title="Color"/>
+                                                <state key="normal" title="Color">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="changeStrokeColorOrWidth:" destination="JSx-i4-THq" eventType="touchUpInside" id="Vko-2v-6Vj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYn-Ce-agv">
                                                 <rect key="frame" x="139" y="0.0" width="49.5" height="30"/>
-                                                <state key="normal" title="Width"/>
+                                                <state key="normal" title="Width">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="changeStrokeColorOrWidth:" destination="JSx-i4-THq" eventType="touchUpInside" id="UqE-LL-F6b"/>
                                                 </connections>
