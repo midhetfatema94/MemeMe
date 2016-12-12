@@ -50,10 +50,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             memeView.drawHierarchy(in: memeView.bounds, afterScreenUpdates: true)
         }
         
-        let saveMeme = Meme(topLine: topTextField.text!, bottomLine: bottomTextField.text!, memedImage: image, originalImage: memeImage.image!)
-        sharingItems.append(saveMeme.memedImage)
-        
-        CustomPhotoAlbum.sharedInstance.saveImage(image: saveMeme.memedImage)
+        if topTextField.text != nil && bottomTextField.text != nil && memeImage.image != nil {
+            
+            let saveMeme = Meme(topLine: topTextField.text!, bottomLine: bottomTextField.text!, memedImage: image, originalImage: memeImage.image!)
+            sharingItems.append(saveMeme.memedImage)
+            CustomPhotoAlbum.sharedInstance.saveImage(image: saveMeme.memedImage)
+        }
         
         let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
@@ -109,7 +111,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             NSStrokeWidthAttributeName: -(CGFloat(stroke.width))]
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = .center
-        bottomTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = [
+            NSStrokeColorAttributeName: stroke.color,
+            NSFontAttributeName: UIFont(name: font.name, size: CGFloat(45))!,
+            NSForegroundColorAttributeName: fill,
+            NSStrokeWidthAttributeName: -(CGFloat(stroke.width))]
         bottomTextField.textAlignment = .center
     }
     

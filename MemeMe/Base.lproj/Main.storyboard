@@ -33,7 +33,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top Line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKO-N5-P0N">
-                                        <rect key="frame" x="12.5" y="60" width="350" height="48"/>
+                                        <rect key="frame" x="13" y="60" width="350" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="350" id="kXe-nN-xab"/>
                                         </constraints>
@@ -42,21 +42,21 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom Line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vZd-hE-IBG">
-                                        <rect key="frame" x="12.5" y="558" width="350" height="49"/>
+                                        <rect key="frame" x="13" y="585" width="350" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="350" id="Sy5-GN-tF1"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="gDF-mP-e0D" firstAttribute="top" secondItem="sTZ-Ai-moF" secondAttribute="top" id="8xR-r6-hZD"/>
+                                    <constraint firstAttribute="bottom" secondItem="vZd-hE-IBG" secondAttribute="bottom" constant="45" id="AwK-ac-121"/>
                                     <constraint firstItem="vZd-hE-IBG" firstAttribute="centerX" secondItem="sTZ-Ai-moF" secondAttribute="centerX" id="Mkp-hF-5Ax"/>
                                     <constraint firstAttribute="bottom" secondItem="gDF-mP-e0D" secondAttribute="bottom" id="QiK-8Q-Z6a"/>
                                     <constraint firstAttribute="trailing" secondItem="gDF-mP-e0D" secondAttribute="trailing" id="aim-bN-3J7"/>
-                                    <constraint firstAttribute="bottom" secondItem="vZd-hE-IBG" secondAttribute="bottom" constant="60" id="caq-3J-WBB"/>
                                     <constraint firstItem="RKO-N5-P0N" firstAttribute="top" secondItem="sTZ-Ai-moF" secondAttribute="top" constant="60" id="fLn-Vk-vlj"/>
                                     <constraint firstItem="RKO-N5-P0N" firstAttribute="centerX" secondItem="sTZ-Ai-moF" secondAttribute="centerX" id="iBa-LJ-B8q"/>
                                     <constraint firstItem="gDF-mP-e0D" firstAttribute="leading" secondItem="sTZ-Ai-moF" secondAttribute="leading" id="xov-G9-KRL"/>
@@ -281,7 +281,7 @@
         <scene sceneID="VSJ-jD-REQ">
             <objects>
                 <navigationController id="T1y-Wo-1R8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kH2-4R-xcr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kH2-4R-xcr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
